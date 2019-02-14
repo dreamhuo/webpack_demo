@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/dreamhuo/webpack_demo#readme",
   "devDependencies": {
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }
