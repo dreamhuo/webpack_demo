@@ -23,9 +23,22 @@ const watching = compiler.watch({
   aggregateTimeout: 300,
   poll: undefined
 }, (err, stats) => {
-    if (err || stats.hasErrors()) {
-        // 在这里处理错误
-        console.log('watch出错了');
+    // 配置错误
+    if (err) {
+        console.error(err.stack || err);
+        if (err.details) {
+            console.error(err.details);
+        }
+        return;
+    }
+    const info = stats.toJson();
+    // 编译错误
+    if (stats.hasErrors()) {
+        console.error(info.errors);
+    }
+    // 编译警告
+    if (stats.hasWarnings()) {
+        console.warn(info.warnings);
     }
     // 显示编译信息
     console.log(stats.toString({
