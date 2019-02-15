@@ -15,6 +15,13 @@ var config = {
 };
 
 module.exports = (env, argv) => {
+    console.log("================================");
+    console.log(env);
+    console.log("++++++++++++++++++++++++++++++++");
+    console.log(argv);
+    console.log("++++++++++++++++++++++++++++++++");
+    console.log(argv.mode);
+    console.log("================================");
     if (argv.mode === 'development') {
     }
     if (argv.mode === 'production') {
