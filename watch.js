@@ -27,6 +27,11 @@ const watching = compiler.watch({
         // 在这里处理错误
         console.log('watch出错了');
     }
+    // 显示编译信息
+    console.log(stats.toString({
+        chunks: false,  // 使构建过程更静默无输出
+        colors: true    // 在控制台展示颜色
+    }));
     // 处理完成
     console.log('watch处理完成');
 });
